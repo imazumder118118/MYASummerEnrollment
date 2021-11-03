@@ -15,7 +15,8 @@ namespace MYASummerEnrollment.Models
         public string MYAYearOfEnrollment { get; set; }
 
         public string MYAPrevYearOfEnrollment { get; set; }
-       
-      
+
+        public string SMTPExchangeEmailServer { get; set; }
+
     }
 }

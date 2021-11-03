@@ -1,0 +1,1366 @@
+﻿/* Taken from RichmondGov */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small {
+  font-weight: bold;
+  line-height: 1;
+  color: inherit;
+}
+
+
+#border
+{
+    background: #2a466d url(../Images/backgroundPrototype.jpg) repeat-x;
+    padding: 10px 10px 10px 10px;
+    width: 960px;
+}
+
+/*header*/
+#header
+{
+    background: url(../Images/headerPrototype2.jpg) no-repeat scroll 0 0 transparent;
+    height: 190px;
+    position: absolute;
+    width: auto;
+    background-color: #FFFFFF;
+    text-align: right;
+}
+#pageHeader
+{
+    height: 142px;
+}
+#RichmondVa, #quickSummary, #preamble, #menuTable11 th, #menuTable04 th, #menuTable05 th, #menuTable06 th, #menuSite h3, #extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6, #divisionalInformation h3, .ADAHiddenInfo, #PrintInfo
+{
+    display: none;
+}
+#pageHeader h1
+{
+    background: url(../images/bannerMayorYouthAcademy.jpg) repeat scroll 0 -35px transparent;
+    font-size: 24px;
+    height: 120px !important;
+    left: 0px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+    top: 170px;
+    width: 960px;
+    background-color: #FFFFFF;
+}
+#pageHeader h1 span
+{
+    background-color: #FFFFFF;
+    border: 2px solid #b58e63;
+    color: #364f71;
+    font-family: Georgia;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    padding: 5px 20px;
+}
+#pageHeader h2
+{
+    color: #29456B;
+    font-family: Georgia;
+    font-size: 22px;
+    font-weight: 900;
+    left: 200px;
+    margin-left: 20px;
+    position: relative;
+    text-align: center;
+    top: 185px;
+    width: 730px;
+}
+
+
+/*content*/
+#supportingText
+{
+    position: relative;
+    top: 10px;
+    background-color: #FFFFFF;
+    margin-top: 140px;
+    min-height: 120px;
+}
+#area01
+{
+    margin-top: 90px;
+    width: 650;
+    background-color: #ffffff !important;
+    border: none;
+}
+
+.sectionheader
+{
+    color: #892d2b;
+    font-size: 14px;
+    font-weight: 900;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-decoration: underline;
+}
+/* Footer */
+#footer
+{
+    background: url(../../images/footerBackground.jpg) repeat scroll 0 0 #ffffff;
+    bottom: 0px;
+    color: #ffffff;
+    height: 171px;
+    position: relative;
+    width: 960px;
+    top: 10px;
+}
+#logos
+{
+    float: right;
+    margin-top: 60px;
+}
+#boilerplate
+{
+    float: left;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    margin-top: 60px;
+    width: 600px;
+}
+#footer a:link
+{
+    color: #fff !important;
+    text-decoration: none;
+}
+#footer a:visited, #footer a:hover, #footer a:active
+{
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+/*Generic */
+body
+{
+    background-color: #ffffff;
+    font-family: Verdana, Helvetica, Sans-Serif, Times New Roman;
+    color: #000000;
+    width: 965px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: normal;
+}
+
+.MarkedinRed
+{
+    color: Red;
+    font-size: 12px;
+    font-weight: 900;
+}
+.Warning
+{
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: 900;
+}
+#content
+{
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: #ffffff;
+}
+#content1
+{
+    height: 200px;
+    margin: 0 40px 0 40px;
+    background-color: #ffffff;
+}
+p
+{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#HeaderPersonalInformation h3
+{
+    padding-bottom: 10px;
+}
+.formBox
+{
+    display: block;
+    background-color: #dbe6f0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+}
+#HeaderFieldChoice
+{
+    display: block;
+    background-color: #dbe6f0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+}
+#FieldChoice
+{
+    display: block;
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight: bold;
+}
+#HeaderPersonalInformation
+{
+    display: block;
+    background-color: #dbe6f0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+}
+#FieldFirstName, #FieldLastName, #FieldMI, #FieldMailingAddress, #FieldZip, #FieldState, #FieldCity, #FieldHomePhone, #FieldCellPhone, #FieldDOB, #FieldSSN, #FieldEmailAddress, #FieldParentName, #FieldParentEmail, #FieldParentPhoneNumber, #FieldParentCellNumber, #FieldApt, #FieldHighSchool, #FieldCurrentGrade, #FieldGPA, #FieldGEDDescr, #FieldMYAPlacement, #FieldTwitter, #FieldCompanyP, #FieldResponsibilitiesP, #FieldJobTitleP, #FieldCompanyO, #FieldResponsibilitiesO, #FieldJobTitleO, #FieldSignature, #FieldDate, #FieldParentSignature, #FieldParentDate, #FieldCurrentAge, #FieldAreaInterestChoice, #FieldTypeTraining, #FieldTypeCommAct, #FieldGender, #FieldRace, #FieldGraduate, #FieldGED, #FieldDiploma, #FieldApplying, #FieldECPI, #FieldHealthProfServ, #FieldRBEmploy, #FieldRBEmployO01, #FieldLenEmploy01, #FieldLenEmploy, #FieldSubmit, #FieldRICTechCenter, #FieldRICTechCenterExp, #FieldBlueSky
+{
+    font-weight: bold;
+    font-size: small;
+    font-family: Verdana;
+}
+#SelectSWE, #SelectCIT, #SelectLife
+{
+    font-family: Verdana;
+    font-size: small;
+}
+#FieldFirstName
+{
+    display: block;
+    /*width: 340px;*/
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldMI
+{
+    display: block;
+    width: 100px;
+    float: left;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldLastName
+{
+    display: block;
+    width: 340px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldMailingAddress
+{
+    display: block;
+    /*width: 580px;*/
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+#FieldTwitter
+{
+    display: block;
+    width: 480px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+#FieldApt
+{
+    display: block;
+    width: 200px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldZip
+{
+    display: block;
+    width: 250px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+#FieldCity
+{
+    display: block;
+    float: left;
+    width: 300px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldState
+{
+    display: block;
+    float: left;
+    width: 200px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+
+.FieldRequired
+{
+    color: Red;
+    font-weight: bold;
+}
+
+input[type="text"]
+{
+    width: 200px;
+    border: 1px solid #696969;
+}
+#FieldTwitter > input[type="text"]
+{
+    width: 300px;
+}
+#FieldMailingAddress > input[type="text"]
+{
+    width: 400px;
+}
+#FieldApt > input[type="text"]
+{
+    width: 70px;
+}
+#FieldFirstName > input[type="text"]
+{
+    width: 200px;
+}
+
+#FieldLastName > input[type="text"]
+{
+    width: 200px;
+}
+
+#FieldMI > input[type="text"]
+{
+    width: 50px;
+}
+#FieldZip > input[type="text"]
+{
+    width: 50px;
+}
+
+#FieldCurrentAge > input[type="text"]
+{
+    width: 80px;
+}
+
+#FieldHomePhone
+{
+    display: block;
+    width: 380px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldCellPhone
+{
+    display: block;
+    width: 380px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldCellPhone > input[type="text"]
+{
+    width: 200px;
+}
+
+#FieldZip > input[type="text"]
+{
+    width: 80px;
+}
+#FieldMobilePhone
+{
+    display: block;
+    width: 380px;
+    float: right;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldEmailAddress
+{
+    display: block;
+    width: 750px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldDOB
+{
+    display: block;
+    width: 360px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+#FieldCurrentAge
+{
+    display: block;
+    width: 200px;
+    float: left;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+#FieldSSN
+{
+    display: block;
+    width: 280px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+#FieldDOB > input[type="text"]
+{
+    width: 100px;
+}
+#FieldSSN > input[type="text"]
+{
+    width: 50px;
+}
+#FieldEmailAddress > input[type="text"]
+{
+    width: 500px;
+}
+
+#ExplanationBox
+{
+    float: right;
+}
+
+#FieldRace
+{
+    display: block;
+}
+#FieldGender
+{
+    display: block;
+}
+
+#RBRaceType01
+{
+    display: block;
+    float: left;
+    width: 220px;
+}
+
+#RBRaceType02
+{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+#RBRaceType03
+{
+    display: block;
+    float: left;
+    width: 160px;
+}
+
+#RBRaceType04
+{
+    display: block;
+    float: left;
+    width: 140px;
+}
+
+#RBRaceType05
+{
+    display: block;
+    float: left;
+    width: 150px;
+}
+.clear
+{
+    clear: both;
+}
+
+#FieldGender input
+{
+    margin-top: 20px;
+}
+
+#FieldParentName
+{
+    display: block;
+    width: 700px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldParentName > input[type="text"]
+{
+    width: 400px;
+}
+
+#FieldParentEmail
+{
+    display: block;
+    width: 700px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldParentEmail > input[type="text"]
+{
+    width: 400px;
+}
+
+#FieldParentPhoneNumber
+{
+    display: block;
+    width: 380px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldParentPhoneNumber > input[type="text"]
+{
+    width: 100px;
+}
+
+#FieldParentCellNumber
+{
+    display: block;
+    width: 380px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldParentCellNumber > input[type="text"]
+{
+    width: 100px;
+}
+
+#HeaderEducationInformation, #HeaderTraining, #HeaderSchoolRelated
+{
+    display: block;
+    background-color: #dbe6f0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+#FieldHighSchool
+{
+    display: block;
+    width: 380px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldHighSchool > input[type="text"]
+{
+    width: 250px;
+}
+
+#FieldCurrentGrade
+{
+    display: block;
+    width: 200px;
+    float: left;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldCurrentGrade > input[type="text"]
+{
+    width: 50px;
+}
+
+#FieldGPA
+{
+    display: block;
+    width: 180px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldGPA > input[type="text"]
+{
+    width: 50px;
+}
+
+#FieldDiploma, #FieldGED, #FieldGraduate, #FieldApplying, #FieldECPI, #FieldHealthProfServ, #FieldRICTechCenter, #FieldBlueSky
+{
+    display: block;
+}
+
+
+#HeaderOtherPrevEmp, #HeaderAreaOfInterest, #HeaderPreviousKDInformation, #HeaderDisclaimer, #HeaderEmployerOfChoice
+{
+    display: block;
+    background-color: #dbe6f0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+}
+
+#HeaderProgramStaff
+{
+    display: block;
+    background-color: #C0C0C0;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #000000;
+    margin-bottom: 30px;
+}
+
+#FieldJobTitleP, #FieldJobTitleO
+{
+    display: block;
+    width: 700px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldResponsibilitiesP, #FieldResponsibilitiesO, #FieldCompanyO, #FieldCompanyP
+{
+    display: block;
+    width: 700px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldMYAPlacement
+{
+    display: block;
+    width: 500px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldApplying, #FieldHighSchGrad
+{
+    display: block;
+}
+
+#FieldMYAPlacement > input[type="text"], #FieldApplying > input[type="text"]
+{
+    width: 400px;
+}
+
+#FieldJobTitleP > input[type="text"], #FieldJobTitleO > input[type="text"], #FieldCompanyO > input[type="text"], #FieldCompanyP > input[type="text"]
+{
+    width: 500px;
+}
+
+#FieldResponsibilitiesP > input[type="text"], #FieldResponsibilitiesO > input[type="text"]
+{
+    width: 500px;
+}
+
+#FieldRBEmploy, #FieldRBEmployO01, #FieldLenEmploy, #FieldLenEmploy01
+{
+    display: block;
+}
+
+#EmpType01, #EmpTypeO01
+{
+    display: block;
+    float: left;
+    width: 150px;
+}
+
+#EmpType02, #EmpTypeO02
+{
+    display: block;
+    float: left;
+    width: 120px;
+}
+
+#EmpType03, #EmpTypeO03
+{
+    display: block;
+    float: left;
+    width: 120px;
+}
+
+#EmpType04, #EmpTypeO04
+{
+    display: block;
+    float: left;
+    width: 180px;
+}
+
+#EmpType05, #EmpTypeO05
+{
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+#PartType01, #PartType03
+{
+    display: block;
+    float: left;
+    width: 130px;
+}
+
+#PartType02, #PartType04
+{
+    display: block;
+    float: left;
+    width: 180px;
+}
+
+#FieldSignature, #FieldParentSignature
+{
+    display: block;
+    width: 580px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldSignature > input[type="text"], #FieldParentSignature > input[type="text"]
+{
+    width: 400px;
+}
+
+#FieldDate, #FieldParentDate
+{
+    display: block;
+    width: 180px;
+    float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-bottom: 10px;
+}
+
+#FieldDate > input[type="text"], #FieldParentDate > input[type="text"]
+{
+    width: 100px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, .editor-label, .display-field, .editor-field
+{
+    margin: 0.5em 0;
+    font-size: small;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+
+
+/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: #5c87b2;
+    /*font-size: .75em;*/
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0; /*color: #696969;*/
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+#header h1
+{
+    width: auto;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px !important;
+}
+
+#main
+{
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+}
+
+ul#menu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active
+{
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"]
+{
+    width: 200px;
+    border: 1px solid #646D7E;
+}
+
+input[type="password"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type='radio'], input[type='checkbox']
+{
+    margin-right: 4px;
+}
+
+
+/* TABLE
+----------------------------------------------------------*/
+
+table
+{
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td
+{
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th
+{
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color: Red;
+}
+
+#menucontainer
+{
+    margin-top: 40px;
+}
+
+div#title
+{
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link
+{
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited
+{
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+
+/* Styles for ul multiple column list */
+/*ul{
+  width:750px;
+  margin-bottom:20px;
+  overflow:hidden;
+  border-top:1px solid #ccc;
+}
+li{
+  line-height:1.5em;
+  border-bottom:1px solid #ccc;
+  float:left;
+  display:inline;
+}
+#double li  { width:50%;} 
+#triple li  { width:33.333%; } 
+#quad li    { width:25%; }
+#six li     { width:16.666%; } */
+
+
+ul
+{
+    float: left;
+    width: 740px;
+    margin: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+li
+{
+    float: left;
+    width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+
+#double li
+{
+    width: 50%;
+}
+.square
+{
+    list-style-type: square;
+}
+
+
+.three-column-panel > ul
+{
+    float: left;
+    width: 33%;
+    list-style-type: none;
+    text-indent: 0;
+}
+
+.buttonStyle
+{
+    border: 2px solid #bC6712;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial,Sans-Serif,Verdana;
+    background-color: #2a466d;
+    padding: 3px;
+    color: #ffffff;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    cursor:pointer;
+}
+ 
+  input[type="submit"]:active {
+    color: green;
+} 
+
+.buttonStyle:hover
+{
+	text-decoration:underline;
+	font-size:16px;
+	/*font-weight:bold;*/
+	font-family:Arial,Sans-Serif,Verdana;
+	background-color:#ffffff;
+	border-color:#bC6712;
+	/*border:1px;*/
+	border-style:solid;
+	border-top-width:2px;
+	border-bottom-width:2px;
+	border-left-width:2px;
+	border-right-width:2px;
+	padding:3px;
+	color:#2a466d;
+}
+
+a.buttonStyle
+{
+   display:inline-block;
+}
+
+#bottomDiv
+{
+    display: block;
+}
+
+#bottomLeft
+{
+    display: block;
+    background: url(Images/MYAlogo.png) no-repeat scroll 0 0 transparent;
+    height: 75px !important;
+    float: left;
+    width: 120px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#bottomCenter
+{
+    display: block;
+    float: left;
+    width: 400px;
+    position: relative;
+    top: 0px;
+    right: -100px;
+}
+
+#bottomRight
+{
+    display: block;
+    background: url(Images/LogoPrototype.png) no-repeat scroll 0 0 transparent;
+    height: 70px !important;
+    float: right;
+    width: 120px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+#HeaderBot
+{
+    display: none;
+}
+.HideMe
+{
+    display: none;
+}
+
+.displayNone
+{
+    display: none;
+}
+
+

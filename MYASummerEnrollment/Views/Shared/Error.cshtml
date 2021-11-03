@@ -1,25 +1,63 @@
-﻿@model ErrorViewModel
+﻿
+
+@model ErrorViewModel
 @{
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+@*<div class="alert alert-danger ">
+        <h1 class="text-danger">Error.</h1>
+        <h2 class="text-danger">An error occurred while processing your request.</h2>
+        <hr />
+        <p class="p1">
+            Sorry, for the error occured .Please contact the MYA's office at 804-646-7933 or e-mail us at <a href="mailto:mayorsyouthacademy@richmondgov.com">mayorsyouthacademy@richmondgov.com</a>
+            if you believe this message to be an error.
+        </p>
+
+    </div>*@
+
+
+
+
+@*@if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }*@
+
+
+<div class="div-1">
+    <p class="p1" style="font-size: small; font-family: Verdana;">
+        <br />
+        <br />
+        <br />
+        Error occured while processiong your application. The process is incomplete.
+        <br />
+        <br />
+        If you have questions please contact the MYA office at 804-646-7933 or Email <a href="mailto:mayorsyouthacademy@richmondgov.com">
+            mayorsyouthacademy@richmondgov.com
+        </a>
     </p>
-}
+</div>
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+
+
+
+@*<div class="alert alert-danger"></div>
+    <h5>Exception Path</h5>
+    <hr />
+    p>@ViewBag.ExceptionPath</p>
+
+    <div class="alert alert-danger"></div>
+    <h5>Exception Message</h5>
+    <hr />
+    <p>@ViewBag.ExceptionMessage</p>
+
+    <div class="alert alert-danger"></div>
+    <h5>Exception StackTrack</h5>
+    <hr />
+    <p>@ViewBag.StackTrace</p>*@
+
+

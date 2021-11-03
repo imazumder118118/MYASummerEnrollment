@@ -36,6 +36,7 @@ namespace MYASummerEnrollment.Controllers
             DateTime today = DateTime.Today; // As DateTime
             string s_today = today.ToString("MM/dd/yyyy"); // As String
             TempData["applicantSignatureDate"] = s_today;
+           // throw new Exception("Error in details view ");
             return View();
             
         }
@@ -48,6 +49,7 @@ namespace MYASummerEnrollment.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    
                     string fullName = Request.Form["FullName"].ToString();
                     string businessName = Request.Form["BusinessName"].ToString();
 
@@ -156,10 +158,14 @@ namespace MYASummerEnrollment.Controllers
                             applicants.ApplicantSignatureDate = DateTime.Now;
                             applicants.CurrentAge = age;
 
-                            //ApplicantRepository applRep = new ApplicantRepository();
-                            //IQueryable<ApplicantModel> getApplicant =_applicantRepo.GetAllApplicants();
-                            var CheckIfApplicantExists = _db.Applicant.Any(x => x.LastName == lastName && x.FirstName.ToUpper() == firstName && x.Ssn == SSN);
-                            if (CheckIfApplicantExists)
+                            ApplicantRepository applRep = new ApplicantRepository(_db);
+                            var ApplicantList = applRep.GetAllApplicants();
+                            
+                           
+                            bool checklist = ApplicantList.Any(x => x.LastName == lastName && x.FirstName.ToUpper() == firstName && x.Ssn == SSN);
+                            //var CheckIfApplicantExists = _db.Applicant.Any(x => x.LastName == lastName && x.FirstName.ToUpper() == firstName && x.Ssn == SSN);
+                            if(checklist)
+                            //if (CheckIfApplicantExists)
                             // if (getApplicant.Any(a => a.LastName.ToUpper() == lastName && a.FirstName.ToUpper() == firstName && a.SSN == SSN))
                             {
                                 //ModelState.AddModelError("Code", "Applicant Already Exists");
@@ -284,6 +290,7 @@ namespace MYASummerEnrollment.Controllers
                     }
                     else
                     {
+                        
                         ModelState.AddModelError(string.Empty, "Date of Birth is not correct.");
                         return View("Index");
                     }
@@ -299,18 +306,18 @@ namespace MYASummerEnrollment.Controllers
 
             catch (Exception exp)
             {
-                try
+                StringBuilder sb = new StringBuilder();
+                ErrorViewModel errormodel = new ErrorViewModel
                 {
-                    //Type appType = this.GetType();
-                    //ErrorLogging.ErrorLog errorLog = new ErrorLogging.ErrorLog();
-                    //errorLog.LogError("MYA Summer Enrollment Application", appType.Namespace, exp);
-                    return View("Error");
-                }
-                catch
-                {
-                    return View("Error");
-                }
+                    ErrorSource = exp.Source.ToString(),
+                    ExceptionMessage = exp.Message,
+                    StackTrace = exp.StackTrace
+                };
+                ErrorController err = new ErrorController(_config) { ControllerContext = ControllerContext };
+                err.EmailException(errormodel, sb);
+                return View("Error");
             }
+            //end of outer catch
             // Use Post/Redirect/Get pattern
             switch (applicants.EnrollmentType.ToUpper())
             {
@@ -597,25 +604,34 @@ namespace MYASummerEnrollment.Controllers
             }
             catch (Exception exp)
             {
-                //Type appType = this.GetType();
-                //ErrorLogging.ErrorLog errorLog = new ErrorLogging.ErrorLog();
-                //errorLog.LogError("MYA Enrollment Application", appType.Namespace, exp);
+                StringBuilder sb = new StringBuilder();
+                ErrorViewModel errormodel = new ErrorViewModel
+                {
+                    ErrorSource = exp.Source.ToString(),
+                    ExceptionMessage = exp.Message,
+                    StackTrace = exp.StackTrace
+                };
+                ErrorController err = new ErrorController(_config) { ControllerContext = ControllerContext };
+                err.EmailException(errormodel, sb);
+                //return View("Error");
             }
 
         }
 
         public void SendEmail(string toEmail, string subject, string body)
         {
-            SmtpClient smtpClient = new SmtpClient("exchange20.richva.ci.richmond.va.us", 25);
+            SmtpClient smtpClient = new SmtpClient(_config.Value.SMTPExchangeEmailServer, 25);
             smtpClient.Credentials = new System.Net.NetworkCredential("", "");
             //smtpClient.UseDefaultCredentials = true;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = false;
+            
 
-            MailMessage email = new MailMessage("MayorsYouthAcademy@richmondgov.com", toEmail, subject, body);
+            MailMessage email = new MailMessage(_config.Value.fromEmail, toEmail, subject, body);
             email.IsBodyHtml = true;
 
             smtpClient.Send(email);
+            //throw new Exception("Error in Details View");
 
             //MYASummerEnrollmentApplication.CORemail.COREmailSoapClient email = new MYASummerEnrollmentApplication.CORemail.COREmailSoapClient();
             //email.SendEmail(toEmail, ConfigurationManager.AppSettings["fromEmail"].ToString(), subject, body, null);
@@ -644,21 +660,21 @@ namespace MYASummerEnrollment.Controllers
                         sBodyApp.Append("You will be contacted via telephone or e-mail at the telephone number/e-mail listed on your application to give you additional information or instructions." + "<br />");
                         sBodyApp.AppendLine("<br/>");
                         sBodyApp.Append("If you have questions, please contact the MYA office at 804-646-7933 or email us at MYACIT@richmondgov.com " + "<br />");
-                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment +"MYA Summer Enrollment Application", sBodyApp.ToString());
+                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment + "MYA Summer Enrollment Application", sBodyApp.ToString());
                         break;
 
                     case "COMMUNITY HEALTH WORKER":
                         sBodyApp.Append("Thank you for submitting the application. This completes your application process." + "<br />");
                         sBodyApp.AppendLine("<br/>");
                         sBodyApp.Append("If you have any questions please contact the MYA office at 804-646-7933 or mayorsyouthacademy@richmondgov.com" + "<br />");
-                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment +"MYA Summer Enrollment Application", sBodyApp.ToString());
+                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment + "MYA Summer Enrollment Application", sBodyApp.ToString());
                         break;
 
                     case "TEEN WORKFORCE":
                         sBodyApp.Append("Thank you for submitting the application. This completes your application process." + "<br />");
                         sBodyApp.AppendLine("<br/>");
                         sBodyApp.Append("If you have any questions please contact the MYA office at 804-646-7933 or mayorsyouthacademy@richmondgov.com" + "<br />");
-                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment +"MYA Summer Enrollment Application", sBodyApp.ToString());
+                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment + "MYA Summer Enrollment Application", sBodyApp.ToString());
                         break;
 
 
@@ -666,7 +682,7 @@ namespace MYASummerEnrollment.Controllers
                         sBodyApp.Append("Thank you for submitting the application. This completes your application process." + "<br />");
                         sBodyApp.AppendLine("<br/>");
                         sBodyApp.Append("If you have any questions please contact the MYA office at 804-646-7933 or mayorsyouthacademy@richmondgov.com" + "<br />");
-                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment +"MYA Summer Enrollment Application", sBodyApp.ToString());
+                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment + "MYA Summer Enrollment Application", sBodyApp.ToString());
                         break;
 
                     case "VIRTUAL EARN & LEARN":
@@ -676,18 +692,23 @@ namespace MYASummerEnrollment.Controllers
                         sBodyApp.Append("You will be contacted via telephone or email listed on your application to give you additional information or instructions." + "<br />");
                         sBodyApp.AppendLine("<br/>");
                         sBodyApp.Append("If you have questions, please contact the MYA office at 804-646-7933 or e-mail us at mayorsyouthacademy@richmondgov.com" + "<br />");
-                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment +"MYA Summer Enrollment Application", sBodyApp.ToString());
+                        this.SendEmail(applicant.EmailAddress, _config.Value.MYAYearOfEnrollment + "MYA Summer Enrollment Application", sBodyApp.ToString());
                         break;
                 }
             }
             catch (Exception exp)
             {
-                //Type appType = this.GetType();
-                //ErrorLogging.ErrorLog errorLog = new ErrorLogging.ErrorLog();
-                //errorLog.LogError("MYA Enrollment Application", appType.Namespace, exp);
-                //LogError log = new LogError
-                //   ("MYA Enrollment Application", appType.Name, exp.TargetSite.DeclaringType.Name, exp.StackTrace.Substring(0, 100), DateTime.Now, exp.Message, "Internet User", Request.ServerVariables["REMOTE_HOST"], exp.TargetSite.Name,
-                //                         "There was an error in Sending Confirmation Email to Applicants", 1, exp.Source, exp.StackTrace);
+                StringBuilder sb = new StringBuilder();
+                ErrorViewModel errormodel = new ErrorViewModel
+                {
+                    ErrorSource = exp.Source.ToString(),
+                    ExceptionMessage = exp.Message,
+                    StackTrace = exp.StackTrace
+                };
+            
+                ErrorController err = new ErrorController(_config) { ControllerContext = ControllerContext };
+                err.EmailException(errormodel, sb);
+                //return View("Error");
             }
         }
 
@@ -755,12 +776,14 @@ namespace MYASummerEnrollment.Controllers
             }
             catch (Exception exp)
             {
-                //Type appType = this.GetType();
-                //ErrorLogging.ErrorLog errorLog = new ErrorLogging.ErrorLog();
-                //errorLog.LogError("MYA Enrollment Application", appType.Namespace, exp);
-                //LogError log = new LogError
-                //   ("MYA Enrollment Application", appType.Name, exp.TargetSite.DeclaringType.Name, exp.StackTrace.Substring(0, 100), DateTime.Now, exp.Message, "Internet User", Request.ServerVariables["REMOTE_HOST"], exp.TargetSite.Name,
-                //                         "There was an error in Sending Confirmation Email to Applicants", 1, exp.Source, exp.StackTrace);
+                StringBuilder sb = new StringBuilder();
+                ErrorViewModel errormodel = new ErrorViewModel();
+                errormodel.ErrorSource = exp.Source.ToString();
+                errormodel.ExceptionMessage = exp.Message;
+                errormodel.StackTrace = exp.StackTrace;
+                ErrorController err = new ErrorController(_config) { ControllerContext = ControllerContext };
+                err.EmailException(errormodel, sb);
+                //return View("Error");
             }
         }
     }

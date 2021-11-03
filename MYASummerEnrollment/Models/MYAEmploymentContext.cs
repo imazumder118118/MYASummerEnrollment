@@ -26,7 +26,7 @@ namespace MYASummerEnrollment.Models
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Data source=DIT-SQL1603-DV;initial catalog=MYAEmployment;persist security info=True;user id=MYAOnlineAppld;password=my@onlinetxt9!");
+                optionsBuilder.UseSqlServer("Data source=DIT-SQL1603-Sv;initial catalog=MYAEmployment;persist security info=True;user id=MYAOnlineAppld;password=my@onlinest@g3");
             }
         }
 

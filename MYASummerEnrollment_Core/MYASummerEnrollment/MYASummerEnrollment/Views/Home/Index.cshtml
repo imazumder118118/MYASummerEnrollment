@@ -1,0 +1,1434 @@
+﻿@model MYASummerEnrollment.Models.Applicant
+
+<div id="content">
+    @*<p class="p1">
+        Please fill out the Application form below to apply for Summer Internship Program</p>*@
+    @*<p class="MarkedinRed">
+        Please note: All fields marked with an asterisk are required.</p>*@
+    @*@{ Html.EnableClientValidation(); }*@
+    @{ using (Html.BeginForm("Create", "Home", FormMethod.Post))
+        {
+            <div id="EnrollmentApplicationForm">
+
+                @*<h2 style="text-align: center">MYA Junior STEM &nbsp; * &nbsp; ARTS Institute &nbsp; * &nbsp; Counselors In Training &nbsp; * &nbsp; Summer Work Experience</h2>*@
+
+                <h2 style="text-align: center">
+                    @*Counselors In Training &nbsp; * &nbsp; Summer Work Experience &nbsp; * &nbsp; Kings Dominion*@
+                    Counselors In Training &nbsp; * &nbsp; Community Health Worker  &nbsp; * &nbsp; Kings Dominion &nbsp; * &nbsp; Teen Workforce  &nbsp; * &nbsp; Virtual Earn &amp; Learn
+                </h2>
+                <p style="text-align: center">
+                    <span style="font-style: italic; font-size: small; font-weight: bold; color: red;">
+                        Note: All fields marked in * are required
+                    </span>
+                </p>
+                <div id="HeaderFieldChoice">
+                    <table align="center" style="margin-left:auto;margin-right:auto;">
+                        <tr>
+                            <td colspan="2" align="center">
+                                <font size="3px">
+                                    <b><i><u>Age requirements</u> to apply for:</i></b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b><i><a title="Counselors In Training  – 14-15 year olds interested in working with children, coordinating activities and being outdoors">Counselors in Training :</a></i></b></td>
+                            <td><b><i>14 - 15 &nbsp; years as of July 1</i></b></td>
+                        </tr>
+                        @*<tr>
+                                <td align="right"><b><i><a title="Summer Work Experience  –  16-19 year olds interested in paid summer internships and career development">Summer Work Experience :</a></i></b></td>
+                                <td><b><i>16 - 19 &nbsp; years as of July 1</i></b></td>
+                            </tr>*@
+                        <tr>
+                            <td align="right"><b><i><a title="Community Health Worker  – 17-19 year olds interested in public health and serving their community">Community Health Worker :</a></i></b></td>
+                            <td><b><i>17 - 19 &nbsp; years as of July 1</i></b></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b><i><a title="Kings Dominion  –  16-19 year olds interested in working at an outdoor amusement park">Kings Dominion :</a></i></b></td>
+                            <td><b><i>16 - 19 &nbsp; years as of July 1</i></b></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b><i><a title="Teen workforce –  14-15 year olds interested in developing hands-on landscape and carpentry skills">Teen workforce :</a></i></b></td>
+                            <td><b><i>14 - 15 &nbsp; years as of July 1</i></b></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b><i><a title="Virtual Earn & Learn  –  16-19 year olds interested in career training and professional development">Virtual Earn & Learn :</a></i></b></td>
+                            <td><b><i>16 - 19 &nbsp; years as of July 1</i></b></td>
+                        </tr>
+
+                    </table>
+
+                    @*<tr>
+                             <td align="right"><b><i><a title="MYA Junior STEM  –  13 year olds who like science, technology, engineering & math">MYA Junior STEM :</a></i></b></td>
+                             <td align="right"><b><i>13 &nbsp; years as of July 1</i></b></td>
+                          </tr>
+                          <tr>
+                             <td align="right"><b><i><a title="ARTS Institute  –  14-15 year olds who like singing, dancing, cooking, writing, drawing, or painting">ARTS Institute :</a></i></b></td>
+                             <td><b><i>14 - 15 &nbsp; years as of July 1</i></b></td>
+                          </tr>
+                        @Html.RadioButtonFor(model => model.EnrollmentType, "MYA JUNIOR")<a title="MYA Junior STEM  –  13 year olds who like science, technology, engineering & math">MYA JUNIOR STEM</a>
+                        &nbsp; &nbsp;
+                        @Html.RadioButtonFor(model => model.EnrollmentType, "ARTS INSTITUTE")<a title="ARTS Institute  –  14-15 year olds who like singing, dancing, cooking, writing, drawing, or painting">ARTS INSTITUTE</a>
+                        &nbsp; &nbsp;*@
+
+
+                    <p style="text-align: center; font-size: medium; font-weight: bold; color: Red">
+                        <span>Applicants can <u>ONLY</u> apply for one program</span>
+                    </p>
+                    <div id="FieldChoice">
+                        <span class="FieldRequired">&#42;</span>
+                        <span align="right">
+                            @Html.Label("I AM APPLYING FOR: ( hover mouse over program option names to see descriptions )")
+                            <br />
+                            <br />
+                            &nbsp; &nbsp;
+                            @Html.RadioButtonFor(model => model.EnrollmentType, "COUNSELORS IN TRAINING")<a title="Counselors In Training  –  14-15 year olds interested in working with children, coordinating activities and being outdoors">COUNSELORS IN TRAINING</a>
+                            &nbsp; &nbsp;
+                            @Html.RadioButtonFor(model => model.EnrollmentType, "COMMUNITY HEALTH WORKER")<a title="Community Health Worker  –  17-19 year olds interested in public health and serving their community">COMMUNITY HEALTH WORKER</a>
+                            &nbsp; &nbsp;
+                            @Html.RadioButtonFor(model => model.EnrollmentType, "KINGS DOMINION")<a title="Kings Dominion  –  16-19 year olds interested in working at an outdoor amusement park">KINGS DOMINION</a>
+                            &nbsp; &nbsp;
+                            @Html.RadioButtonFor(model => model.EnrollmentType, "TEEN WORKFORCE")<a title="Teen Workforce:  14-15 year olds interested in developing hands-on landscape and carpentry skills">TEEN WORKFORCE</a>
+                            &nbsp; &nbsp;
+                            @Html.RadioButtonFor(model => model.EnrollmentType, "VIRTUAL EARN & LEARN")<a title="Virtual Earn & Learn  –  16-19 year olds interested in career training and professional development">VIRTUAL EARN AND LEARN</a>
+
+
+                            <br />
+                            @Html.ValidationMessageFor(model => model.EnrollmentType)
+                        </span>
+                    </div>
+                    <div id="FieldECPI">
+                        <br />
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Will you have access to a reliable phone , computer , or tablet and internet ?")
+                        @Html.RadioButtonFor(model => model.Ecpiseries, "YES")Yes
+                        @Html.RadioButtonFor(model => model.Ecpiseries, "NO")No
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Ecpiseries, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div id="HeaderPersonalInformation">
+                    <h3>APPLICANT INFORMATION</h3>
+                    <br />
+                    <div id="FieldLastName">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Last Name:")
+                        @Html.TextBoxFor(model => model.LastName, new { maxlength = "50" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                    <div id="FieldMI">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("MI:")
+                        @Html.TextBoxFor(model => model.MiddleName, new { maxlength = "5" })
+                        @Html.ValidationMessageFor(model => model.MiddleName)
+                    </div>
+                    <div id="FieldFirstName">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("First Name:")
+                        @Html.TextBoxFor(model => model.FirstName, new { maxlength = "50" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+                    <div id="FieldMailingAddress">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Mailing Address:")
+                        @Html.TextBoxFor(model => model.Address, new { maxlength = "50" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Address)
+                    </div>
+                    <div id="FieldApt">
+                        @Html.Label("Apt/Unit#")
+                        @Html.TextBoxFor(model => model.Apt, new { maxlength = "10" })
+                    </div>
+                    <div id="FieldCity">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("City:")
+                        @Html.TextBoxFor(model => model.City, new { maxlength = "50" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.City)
+                    </div>
+                    <div id="FieldState">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("State:")
+                        <select name="state" id="state">
+                            <option value="VA">VA</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DE">DE</option>
+                            <option value="DC">DC</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MS">MS</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </select>
+                    </div>
+                    <div id="FieldZip">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Zip:")
+                        @Html.TextBoxFor(model => model.Zip, new { maxlength = "5" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Zip)
+                    </div>
+                    <div id="FieldHomePhone">
+                        <span class=""></span>
+                        @Html.Label("Home Phone:")
+                        @Html.TextBoxFor(model => model.HomePhone, new { maxlength = "15", id = "HomePhone" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.HomePhone)
+                    </div>
+                    <div id="FieldCellPhone">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Cell Phone:")
+                        @Html.TextBoxFor(model => model.CellPhone, new { maxlength = "15", id = "CellPhone" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.CellPhone)
+                    </div>
+                    <div id="FieldEmailAddress">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Email Address:")
+                        @Html.TextBoxFor(model => model.EmailAddress, new { maxlength = "50" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.EmailAddress)
+                    </div>
+
+                    @*<div id="FieldTwitter">
+                            @Html.Label("TwitterAccount:")
+                            @Html.TextBoxFor(model => model.TwitterAccount, new { maxlength = "50" })
+                        </div>*@
+
+                    <div class="clear">
+                    </div>
+                    <div id="FieldDOB">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Date of Birth(mm/dd/yyyy):")
+                        @Html.TextBoxFor(model => model.Dob, new { maxlength = "15", id = "DateOfBirth" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Dob)
+                    </div>
+
+                    @*<div id="FieldCurrentAge">
+                            <span class="FieldRequired">&#42;</span>
+                            @Html.Label("Current Age")
+                            @Html.TextBoxFor(model => model.CurrentAge, new {maxlength = "4" })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.CurrentAge )
+                        </div>*@
+
+                    <div id="FieldSSN">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("SSN:(Last 4 digits)")
+                        @Html.TextBoxFor(model => model.Ssn, new { maxlength = "4", id = "SSN" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Ssn)
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldGender">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Gender:")
+                        &nbsp; &nbsp;
+                        @Html.RadioButtonFor(model => model.Gender, "Male")Male
+                        &nbsp; &nbsp;
+                        @Html.RadioButtonFor(model => model.Gender, "Female")Female
+                        &nbsp; &nbsp; &nbsp;
+                        @Html.RadioButtonFor(model => model.Gender, "Other")Wish to not disclose
+                        <br />
+                        @Html.ValidationMessageFor(model => model.Gender)
+                    </div>
+                    <div id="FieldRace">
+                        <span>
+                            <br />
+                            Race:
+                        </span><span style="font-style: italic; font-size: x-small; font-weight: normal">
+                            (Used for program demographic analysis only)
+                        </span>
+                        <div id="formItemEventType">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span id="RBRaceType01">
+                                            @Html.RadioButtonFor(model => model.Race, "American Indian/Alaska Native")American Indian<br /> &nbsp; &nbsp; or Alaska Native
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span id="RBRaceType02">
+                                            @Html.RadioButtonFor(model => model.Race, "Asian")Asian
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span id="RBRaceType03">
+                                            @Html.RadioButtonFor(model => model.Race, "Black/African American")Black or<br /> &nbsp; &nbsp; African American
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span id="RBRaceType04">
+                                            @Html.RadioButtonFor(model => model.Race, "Hispanic/Latino")Hispanic<br /> &nbsp; &nbsp; or Latino
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span id="RBRaceType05">
+                                            @Html.RadioButtonFor(model => model.Race, "Native Hawaiian/Pacific Islander")Native Hawaiian<br /> &nbsp; &nbsp; or Other Pacific<br /> &nbsp; &nbsp; Islander
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span id="RBRaceType06">
+                                            @Html.RadioButtonFor(model => model.Race, "White")White
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span id="RBRaceType07">
+                                            @Html.RadioButtonFor(model => model.Race, "Other")Other
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldParentName">
+                        <br />
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Parent/Guardian Name (s):")
+                        @Html.TextBoxFor(model => model.ParentNames, new { maxlength = "100" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.ParentNames)
+                    </div>
+                    <div id="FieldParentPhoneNumber">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Parent/Guardian Home Phone:")
+                        @Html.TextBoxFor(model => model.ParentHomePhone, new { maxlength = "15", id = "ParentPhone" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.ParentHomePhone)
+                    </div>
+                    <div id="FieldParentCellNumber">
+                        @Html.Label("Parent/Guardian Cell Phone:")
+                        @Html.TextBoxFor(model => model.ParentCellPhone, new { maxlength = "15", id = "ParentCell" })
+                    </div>
+                    <div id="FieldParentEmail">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Parent/Guardian Email:")
+                        @Html.TextBoxFor(model => model.ParentEmail, new { maxlength = "50", id = "ParentEmail" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.ParentEmail)
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div id="HeaderEducationInformation">
+                    <h3>
+                        EDUCATION
+                    </h3>
+                    <br />
+                    <div id="FieldHighSchool">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("School:")
+                        @Html.TextBoxFor(model => model.School, new { maxlength = "100" })
+                        <br />
+                        @Html.ValidationMessageFor(model => model.School)
+                    </div>
+                    <div id="FieldCurrentGrade">
+                        <span class="FieldRequired">&#42;</span>
+                        @Html.Label("Current Grade:")
+                        @*@Html.TextBoxFor(model => model.CurrentGrade, new { maxlength = "5" })*@
+
+                        <select name="CurrentGrade" id="CurrentGrade">
+
+                            <option value="">&nbsp;</option>
+                            <option value="College">College</option>
+                            <option value="12">12</option>
+                            <option value="12">12</option>
+                            <option value="11">11</option>
+                            <option value="10">10</option>
+                            <option value="9">&nbsp;9</option>
+                            <option value="8">&nbsp;8</option>
+                            <option value="7">&nbsp;7</option>
+                        </select>
+                        <br />
+                        @Html.ValidationMessageFor(model => model.CurrentGrade)
+                    </div>
+                    <div id="FieldGPA">
+                        @Html.Label("GPA:")
+                        @*@Html.TextBoxFor(model => model.GPA, new { maxlength = "5" })*@
+
+                        <select name="GPA" id="GPA">
+
+                            <option value="">&nbsp;</option>
+                            <option value="5.5">5.5</option>
+                            <option value="5.4">5.4</option><!--<option value="5.49">5.49</option><option value="5.48">5.48</option><option value="5.47">5.47</option><option value="5.46">5.46</option><option value="5.45">5.45</option><option value="5.44">5.44</option><option value="5.43">5.43</option><option value="5.42">5.42</option><option value="5.41">5.41</option><option value="5.40">5.40</option>-->
+                            <option value="5.3">5.3</option><!--<option value="5.39">5.39</option><option value="5.38">5.38</option><option value="5.37">5.37</option><option value="5.36">5.36</option><option value="5.35">5.35</option><option value="5.34">5.34</option><option value="5.33">5.33</option><option value="5.32">5.32</option><option value="5.31">5.31</option><option value="5.30">5.30</option>-->
+                            <option value="5.2">5.2</option><!--<option value="5.29">5.29</option><option value="5.28">5.28</option><option value="5.27">5.27</option><option value="5.26">5.26</option><option value="5.25">5.25</option><option value="5.24">5.24</option><option value="5.23">5.23</option><option value="5.22">5.22</option><option value="5.21">5.21</option><option value="5.20">5.20</option>-->
+                            <option value="5.1">5.1</option><!--<option value="5.19">5.19</option><option value="5.18">5.18</option><option value="5.17">5.17</option><option value="5.16">5.16</option><option value="5.15">5.15</option><option value="5.14">5.14</option><option value="5.13">5.13</option><option value="5.12">5.12</option><option value="5.11">5.11</option><option value="5.10">5.10</option>-->
+                            <option value="5.0">5.0</option><!--<option value="5.09">5.09</option><option value="5.08">5.08</option><option value="5.07">5.07</option><option value="5.06">5.06</option><option value="5.05">5.05</option><option value="5.04">5.04</option><option value="5.03">5.03</option><option value="5.02">5.02</option><option value="5.01">5.01</option><option value="5.00">5.00</option>-->
+                            <option value="4.9">4.9</option><!--<option value="4.99">4.99</option><option value="4.98">4.98</option><option value="4.97">4.97</option><option value="4.96">4.96</option><option value="4.95">4.95</option><option value="4.94">4.94</option><option value="4.93">4.93</option><option value="4.92">4.92</option><option value="4.91">4.91</option><option value="4.90">4.90</option>-->
+                            <option value="4.8">4.8</option><!--<option value="4.89">4.89</option><option value="4.88">4.88</option><option value="4.87">4.87</option><option value="4.86">4.86</option><option value="4.85">4.85</option><option value="4.84">4.84</option><option value="4.83">4.83</option><option value="4.82">4.82</option><option value="4.81">4.81</option><option value="4.80">4.80</option>-->
+                            <option value="4.7">4.7</option><!--<option value="4.79">4.79</option><option value="4.78">4.78</option><option value="4.77">4.77</option><option value="4.76">4.76</option><option value="4.75">4.75</option><option value="4.74">4.74</option><option value="4.73">4.73</option><option value="4.72">4.72</option><option value="4.71">4.71</option><option value="4.70">4.70</option>-->
+                            <option value="4.6">4.6</option><!--<option value="4.69">4.69</option><option value="4.68">4.68</option><option value="4.67">4.67</option><option value="4.66">4.66</option><option value="4.65">4.65</option><option value="4.64">4.64</option><option value="4.63">4.63</option><option value="4.62">4.62</option><option value="4.61">4.61</option><option value="4.60">4.60</option>-->
+                            <option value="4.5">4.5</option><!--<option value="4.59">4.59</option><option value="4.58">4.58</option><option value="4.57">4.57</option><option value="4.56">4.56</option><option value="4.55">4.55</option><option value="4.54">4.54</option><option value="4.53">4.53</option><option value="4.52">4.52</option><option value="4.51">4.51</option><option value="4.50">4.50</option>-->
+                            <option value="4.4">4.4</option><!--<option value="4.49">4.49</option><option value="4.48">4.48</option><option value="4.47">4.47</option><option value="4.46">4.46</option><option value="4.45">4.45</option><option value="4.44">4.44</option><option value="4.43">4.43</option><option value="4.42">4.42</option><option value="4.41">4.41</option><option value="4.40">4.40</option>-->
+                            <option value="4.3">4.3</option><!--<option value="4.39">4.39</option><option value="4.38">4.38</option><option value="4.37">4.37</option><option value="4.36">4.36</option><option value="4.35">4.35</option><option value="4.34">4.34</option><option value="4.33">4.33</option><option value="4.32">4.32</option><option value="4.31">4.31</option><option value="4.30">4.30</option>-->
+                            <option value="4.2">4.2</option><!--<option value="4.29">4.29</option><option value="4.28">4.28</option><option value="4.27">4.27</option><option value="4.26">4.26</option><option value="4.25">4.25</option><option value="4.24">4.24</option><option value="4.23">4.23</option><option value="4.22">4.22</option><option value="4.21">4.21</option><option value="4.20">4.20</option>-->
+                            <option value="4.1">4.1</option><!--<option value="4.19">4.19</option><option value="4.18">4.18</option><option value="4.17">4.17</option><option value="4.16">4.16</option><option value="4.15">4.15</option><option value="4.14">4.14</option><option value="4.13">4.13</option><option value="4.12">4.12</option><option value="4.11">4.11</option><option value="4.10">4.10</option>-->
+                            <option value="4.0">4.0</option><!--<option value="4.09">4.09</option><option value="4.08">4.08</option><option value="4.07">4.07</option><option value="4.06">4.06</option><option value="4.05">4.05</option><option value="4.04">4.04</option><option value="4.03">4.03</option><option value="4.02">4.02</option><option value="4.01">4.01</option><option value="4.00">4.00</option>-->
+                            <option value="3.9">3.9</option><!--<option value="3.99">3.99</option><option value="3.98">3.98</option><option value="3.97">3.97</option><option value="3.96">3.96</option><option value="3.95">3.95</option><option value="3.94">3.94</option><option value="3.93">3.93</option><option value="3.92">3.92</option><option value="3.91">3.91</option><option value="3.90">3.90</option>-->
+                            <option value="3.8">3.8</option><!--<option value="3.89">3.89</option><option value="3.88">3.98</option><option value="3.87">3.87</option><option value="3.86">3.86</option><option value="3.85">3.85</option><option value="3.84">3.84</option><option value="3.83">3.83</option><option value="3.82">3.82</option><option value="3.81">3.81</option><option value="3.80">3.80</option>-->
+                            <option value="3.7">3.7</option><!--<option value="3.79">3.79</option><option value="3.78">3.88</option><option value="3.77">3.77</option><option value="3.76">3.76</option><option value="3.75">3.75</option><option value="3.74">3.74</option><option value="3.73">3.73</option><option value="3.72">3.72</option><option value="3.71">3.71</option><option value="3.70">3.70</option>-->
+                            <option value="3.6">3.6</option><!--<option value="3.69">3.69</option><option value="3.68">3.68</option><option value="3.67">3.67</option><option value="3.66">3.66</option><option value="3.65">3.65</option><option value="3.64">3.64</option><option value="3.63">3.63</option><option value="3.62">3.62</option><option value="3.61">3.61</option><option value="3.60">3.60</option>-->
+                            <option value="3.5">3.5</option><!--<option value="3.59">3.59</option><option value="3.58">3.58</option><option value="3.57">3.57</option><option value="3.56">3.56</option><option value="3.55">3.55</option><option value="3.54">3.54</option><option value="3.53">3.53</option><option value="3.52">3.52</option><option value="3.51">3.51</option><option value="3.50">3.50</option>-->
+                            <option value="3.4">3.4</option><!--<option value="3.49">3.49</option><option value="3.48">3.48</option><option value="3.47">3.47</option><option value="3.46">3.46</option><option value="3.45">3.45</option><option value="3.44">3.44</option><option value="3.43">3.43</option><option value="3.42">3.42</option><option value="3.41">3.41</option><option value="3.40">3.40</option>-->
+                            <option value="3.3">3.3</option><!--<option value="3.39">3.39</option><option value="3.38">3.38</option><option value="3.37">3.37</option><option value="3.36">3.36</option><option value="3.35">3.35</option><option value="3.34">3.34</option><option value="3.33">3.33</option><option value="3.32">3.32</option><option value="3.31">3.31</option><option value="3.30">3.30</option>-->
+                            <option value="3.2">3.2</option><!--<option value="3.29">3.29</option><option value="3.28">3.28</option><option value="3.27">3.27</option><option value="3.26">3.26</option><option value="3.25">3.25</option><option value="3.24">3.24</option><option value="3.23">3.23</option><option value="3.22">3.22</option><option value="3.21">3.21</option><option value="3.20">3.20</option>-->
+                            <option value="3.1">3.1</option><!--<option value="3.19">3.19</option><option value="3.18">3.18</option><option value="3.17">3.17</option><option value="3.16">3.16</option><option value="3.15">3.15</option><option value="3.14">3.14</option><option value="3.13">3.13</option><option value="3.12">3.12</option><option value="3.11">3.11</option><option value="3.10">3.10</option>-->
+                            <option value="3.0">3.0</option><!--<option value="3.09">3.09</option><option value="3.08">3.08</option><option value="3.07">3.07</option><option value="3.06">3.06</option><option value="3.05">3.05</option><option value="3.04">3.04</option><option value="3.03">3.03</option><option value="3.02">3.02</option><option value="3.01">3.01</option><option value="3.00">3.00</option>-->
+                            <option value="2.9">2.9</option><!--<option value="2.99">2.99</option><option value="2.98">2.98</option><option value="2.97">2.97</option><option value="2.96">2.96</option><option value="2.95">2.95</option><option value="2.94">2.94</option><option value="2.93">2.93</option><option value="2.92">2.92</option><option value="2.91">2.91</option><option value="2.90">2.90</option>-->
+                            <option value="2.8">2.8</option><!--<option value="2.89">2.89</option><option value="2.88">2.88</option><option value="2.87">2.87</option><option value="2.86">2.86</option><option value="2.85">2.85</option><option value="2.84">2.84</option><option value="2.83">2.83</option><option value="2.82">2.82</option><option value="2.81">2.81</option><option value="2.80">2.80</option>-->
+                            <option value="2.7">2.7</option><!--<option value="2.79">2.79</option><option value="2.78">2.78</option><option value="2.77">2.77</option><option value="2.76">2.76</option><option value="2.75">2.75</option><option value="2.74">2.74</option><option value="2.73">2.73</option><option value="2.72">2.72</option><option value="2.71">2.71</option><option value="2.70">2.70</option>-->
+                            <option value="2.6">2.6</option><!--<option value="2.69">2.69</option><option value="2.68">2.68</option><option value="2.67">2.67</option><option value="2.66">2.66</option><option value="2.65">2.65</option><option value="2.64">2.64</option><option value="2.63">2.63</option><option value="2.62">2.62</option><option value="2.61">2.61</option><option value="2.60">2.60</option>-->
+                            <option value="2.5">2.5</option><!--<option value="2.59">2.59</option><option value="2.58">2.58</option><option value="2.57">2.57</option><option value="2.56">2.56</option><option value="2.55">2.55</option><option value="2.54">2.54</option><option value="2.53">2.53</option><option value="2.52">2.52</option><option value="2.51">2.51</option><option value="2.50">2.50</option>-->
+                            <option value="2.4">2.4</option><!--<option value="2.49">2.49</option><option value="2.48">2.48</option><option value="2.47">2.47</option><option value="2.46">2.46</option><option value="2.45">2.45</option><option value="2.44">2.44</option><option value="2.43">2.43</option><option value="2.42">2.42</option><option value="2.41">2.41</option><option value="2.40">2.40</option>-->
+                            <option value="2.3">2.3</option><!--<option value="2.39">2.39</option><option value="2.38">2.38</option><option value="2.37">2.37</option><option value="2.36">2.36</option><option value="2.35">2.35</option><option value="2.34">2.34</option><option value="2.33">2.33</option><option value="2.32">2.32</option><option value="2.31">2.31</option><option value="2.30">2.30</option>-->
+                            <option value="2.2">2.2</option><!--<option value="2.29">2.29</option><option value="2.28">2.28</option><option value="2.27">2.27</option><option value="2.26">2.26</option><option value="2.25">2.25</option><option value="2.24">2.24</option><option value="2.23">2.23</option><option value="2.22">2.22</option><option value="2.21">2.21</option><option value="2.20">2.20</option>-->
+                            <option value="2.1">2.1</option><!--<option value="2.19">2.19</option><option value="2.18">2.18</option><option value="2.17">2.17</option><option value="2.16">2.16</option><option value="2.15">2.15</option><option value="2.14">2.14</option><option value="2.13">2.13</option><option value="2.12">2.12</option><option value="2.11">2.11</option><option value="2.10">2.10</option>-->
+                            <option value="2.0">2.0</option><!--<option value="2.09">2.09</option><option value="2.08">2.08</option><option value="2.07">2.07</option><option value="2.06">2.06</option><option value="2.05">2.05</option><option value="2.04">2.04</option><option value="2.03">2.03</option><option value="2.02">2.02</option><option value="2.01">2.01</option><option value="2.00">2.00</option>-->
+                            <option value="1.9">1.9</option><!--<option value="1.99">1.99</option><option value="1.98">1.98</option><option value="1.97">1.97</option><option value="1.96">1.96</option><option value="1.95">1.95</option><option value="1.94">1.94</option><option value="1.93">1.93</option><option value="1.92">1.92</option><option value="1.91">1.91</option><option value="1.90">1.90</option>-->
+                            <option value="1.8">1.8</option><!--<option value="1.89">1.89</option><option value="1.88">1.88</option><option value="1.87">1.87</option><option value="1.86">1.86</option><option value="1.85">1.85</option><option value="1.84">1.84</option><option value="1.83">1.83</option><option value="1.82">1.82</option><option value="1.81">1.81</option><option value="1.80">1.80</option>-->
+                            <option value="1.7">1.7</option><!--<option value="1.79">1.79</option><option value="1.78">1.78</option><option value="1.77">1.77</option><option value="1.76">1.76</option><option value="1.75">1.75</option><option value="1.74">1.74</option><option value="1.73">1.73</option><option value="1.72">1.72</option><option value="1.71">1.71</option><option value="1.70">1.70</option>-->
+                            <option value="1.6">1.6</option><!--<option value="1.69">1.69</option><option value="1.68">1.68</option><option value="1.67">1.67</option><option value="1.66">1.66</option><option value="1.65">1.65</option><option value="1.64">1.64</option><option value="1.63">1.63</option><option value="1.62">1.62</option><option value="1.61">1.61</option><option value="1.60">1.60</option>-->
+                            <option value="1.5">1.5</option><!--<option value="1.59">1.59</option><option value="1.58">1.58</option><option value="1.57">1.57</option><option value="1.56">1.56</option><option value="1.55">1.55</option><option value="1.54">1.54</option><option value="1.53">1.53</option><option value="1.52">1.52</option><option value="1.51">1.51</option><option value="1.50">1.50</option>-->
+                            <option value="1.4">1.4</option><!--<option value="1.49">1.49</option><option value="1.48">1.48</option><option value="1.47">1.47</option><option value="1.46">1.46</option><option value="1.45">1.45</option><option value="1.44">1.44</option><option value="1.43">1.43</option><option value="1.42">1.42</option><option value="1.41">1.41</option><option value="1.40">1.40</option>-->
+                            <option value="1.3">1.3</option><!--<option value="1.39">1.39</option><option value="1.38">1.38</option><option value="1.37">1.37</option><option value="1.36">1.36</option><option value="1.35">1.35</option><option value="1.34">1.34</option><option value="1.33">1.33</option><option value="1.32">1.32</option><option value="1.31">1.31</option><option value="1.30">1.30</option>-->
+                            <option value="1.2">1.2</option><!--<option value="1.29">1.29</option><option value="1.28">1.28</option><option value="1.27">1.27</option><option value="1.26">1.26</option><option value="1.25">1.25</option><option value="1.24">1.24</option><option value="1.23">1.23</option><option value="1.22">1.22</option><option value="1.21">1.21</option><option value="1.20">1.20</option>-->
+                            <option value="1.1">1.1</option><!--<option value="1.19">1.19</option><option value="1.18">1.18</option><option value="1.17">1.17</option><option value="1.16">1.16</option><option value="1.15">1.15</option><option value="1.14">1.14</option><option value="1.13">1.13</option><option value="1.12">1.12</option><option value="1.11">1.11</option><option value="1.10">1.10</option>-->
+                            <option value="1.0">1.0</option><!--<option value="1.09">1.09</option><option value="1.08">1.08</option><option value="1.07">1.07</option><option value="1.06">1.06</option><option value="1.05">1.05</option><option value="1.04">1.04</option><option value="1.03">1.03</option><option value="1.02">1.02</option><option value="1.01">1.01</option><option value="1.00">1.00</option>-->
+                            <option value="0.9">0.9</option><!--<option value="0.99">0.99</option><option value="0.98">0.98</option><option value="0.97">0.97</option><option value="0.96">0.96</option><option value="0.95">0.95</option><option value="0.94">0.94</option><option value="0.93">0.93</option><option value="0.92">0.92</option><option value="0.91">0.91</option><option value="0.90">0.90</option>-->
+                            <option value="0.8">0.8</option><!--<option value="0.89">0.89</option><option value="0.88">0.88</option><option value="0.87">0.87</option><option value="0.86">0.86</option><option value="0.85">0.85</option><option value="0.84">0.84</option><option value="0.83">0.83</option><option value="0.82">0.82</option><option value="0.81">0.81</option><option value="0.80">0.80</option>-->
+                            <option value="0.7">0.7</option><!--<option value="0.79">0.79</option><option value="0.78">0.78</option><option value="0.77">0.77</option><option value="0.76">0.76</option><option value="0.75">0.75</option><option value="0.74">0.74</option><option value="0.73">0.73</option><option value="0.72">0.72</option><option value="0.71">0.71</option><option value="0.70">0.70</option>-->
+                            <option value="0.6">0.6</option><!--<option value="0.69">0.69</option><option value="0.68">0.68</option><option value="0.67">0.67</option><option value="0.66">0.66</option><option value="0.65">0.65</option><option value="0.64">0.64</option><option value="0.63">0.63</option><option value="0.62">0.62</option><option value="0.61">0.61</option><option value="0.60">0.60</option>-->
+                            <option value="0.5">0.5</option><!--<option value="0.59">0.59</option><option value="0.58">0.58</option><option value="0.57">0.57</option><option value="0.56">0.56</option><option value="0.55">0.55</option><option value="0.54">0.54</option><option value="0.53">0.53</option><option value="0.52">0.52</option><option value="0.51">0.51</option><option value="0.50">0.50</option>-->
+                            <option value="0.4">0.4</option><!--<option value="0.49">0.49</option><option value="0.48">0.48</option><option value="0.47">0.47</option><option value="0.46">0.46</option><option value="0.45">0.45</option><option value="0.44">0.44</option><option value="0.43">0.43</option><option value="0.42">0.42</option><option value="0.41">0.41</option><option value="0.40">0.40</option>-->
+                            <option value="0.3">0.3</option><!--<option value="0.39">0.39</option><option value="0.38">0.38</option><option value="0.37">0.37</option><option value="0.36">0.36</option><option value="0.35">0.35</option><option value="0.34">0.34</option><option value="0.33">0.33</option><option value="0.32">0.32</option><option value="0.31">0.31</option><option value="0.30">0.30</option>-->
+                            <option value="0.2">0.2</option><!--<option value="0.29">0.29</option><option value="0.28">0.28</option><option value="0.27">0.27</option><option value="0.26">0.26</option><option value="0.25">0.25</option><option value="0.24">0.24</option><option value="0.23">0.23</option><option value="0.22">0.22</option><option value="0.21">0.21</option><option value="0.20">0.20</option>-->
+                            <option value="0.1">0.1</option><!--<option value="0.19">0.19</option><option value="0.18">0.18</option><option value="0.17">0.17</option><option value="0.16">0.16</option><option value="0.15">0.15</option><option value="0.14">0.14</option><option value="0.13">0.13</option><option value="0.12">0.12</option><option value="0.11">0.11</option><option value="0.10">0.10</option>-->
+                            <option value="0.0">0.0</option><!--<option value="0.09">0.09</option><option value="0.08">0.08</option><option value="0.07">0.07</option><option value="0.06">0.06</option><option value="0.05">0.05</option><option value="0.04">0.04</option><option value="0.03">0.03</option><option value="0.02">0.02</option><option value="0.01">0.01</option><option value="0.00">0.00</option>-->
+                        </select>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldGraduate">
+                        <br />
+                        @Html.Label(" If out of school did you graduate?")
+                        @Html.RadioButtonFor(model => model.GraduateYesNo, "Yes")YES, I have graduated
+                        @Html.RadioButtonFor(model => model.GraduateYesNo, "No")NO, I have not graduated
+                    </div>
+
+                    @*@Html.RadioButtonFor(model => model.GraduateYesNo, "No with GED")NO with GED*@
+
+                    <div id="FieldGED">
+                        <br />
+                        @Html.Label("Will you require any special accommodations to perform placement duties?")
+                        @Html.RadioButtonFor(model => model.SpecialAccomodations, "Yes") Yes
+                        @Html.RadioButtonFor(model => model.SpecialAccomodations, "No") No
+                    </div>
+
+                    <div id="FieldGEDDescr">
+
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        @Html.Label(" If yes, please describe:")
+                        @Html.TextAreaFor(model => model.SpecialAccomodationsExplain, new { maxlength = 100, rows = 2, cols = 60 })
+                    </div>
+                    <div id="FieldDiploma">
+                        <br />
+                        @Html.Label("Were you enrolled in " + (System.DateTime.Now.Year - 1).ToString() + " MYA’s programming?")
+                        @*"Were you enrolled in @System.Configuration.ConfigurationManager.AppSettings["MYAPrevYearOfEnrollment"] MYA’s programming?"*@
+                        @Html.RadioButtonFor(model => model.MyaenrollmentPrev, "Yes")Yes
+                        @Html.RadioButtonFor(model => model.MyaenrollmentPrev, "No")No
+                    </div>
+                    <div id="FieldMYAPlacement">
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        "If yes, which program?"
+                        @*@Html.TextBoxFor(model => model.MYAEnrollmentPrevExp, new { maxlength = 100 })*@
+                        <!--<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-->
+
+                        <select name="MYAEnrollmentPrevExp" id="MYAEnrollmentPrevExp">
+
+                            <option value="">&nbsp;</option>
+                            @*<option value="MYA Junior STEM">                           MYA Junior STEM</option>
+                                <option value="MYA ARTS Institute">                        MYA ARTS Institute</option>*@
+
+                            <option value="MYA Counselors-in-Training">                MYA Counselors-in-Training (CIT)</option>
+                            <option value="MYA Kings Dominion">                        MYA Kings Dominion</option>
+                            <option value="MYA Summer Work Experience">                MYA Summer Work Experience</option>
+                            <option value="MYA Future Leaders Program- Youth Council"> MYA Future Leaders Program- Youth Council</option>
+                            <option value="MYA Future Leaders Program- Youth Justice"> MYA Future Leaders Program- Youth Justice</option>
+                            <option value="MYA Junior Founders Club">                  MYA Junior Founders Club</option>
+
+                            @*<option value="Reynolds Institute">Reynolds Institute</option>
+                                <option value="ARTS Institute">ARTS Institute</option>
+                                <option value="Youth Council">Youth Council</option>
+                                <option value="Youth Justice">Youth Justice</option>*@
+
+                        </select>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldApplying">
+                        <br />
+                        @Html.Label("Did you participate in any City of Richmond Youth Programs in " + (System.DateTime.Now.Year - 1).ToString() + "?")
+                        @*"Did you participate in any City of Richmond Youth Programs in " + @System.Configuration.ConfigurationManager.AppSettings["MYAPrevYearOfEnrollment"] + "?"*@
+                        @Html.RadioButtonFor(model => model.TwitterAccount, "Yes")Yes
+                        @Html.RadioButtonFor(model => model.TwitterAccount, "No")No
+                        <ul style="list-style-type: square;">
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; Boys & Girls Clubs</li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; Foster Care</li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; Parks & Recreation</li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; RRHA Resident</li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; Social Services Client</li>
+                        </ul>
+                        <div class="clear">
+                        </div>
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        @Html.Label(" If yes, type the one(s) you have participated in:")
+                        @Html.TextBoxFor(model => model.Myaenrollment2Year, new { maxlength = 100 })
+
+                        @*<span id="PartType01">
+                                @Html.RadioButtonFor(model => model.MYAEnrollment2Year, "Foster Care")Foster
+                                Care </span><span id="PartType02">
+                                    @Html.RadioButtonFor(model => model.MYAEnrollment2Year, "Boys & Girls Clubs")Boys
+                                    & Girls Clubs </span><span id="PartType03">
+                                        @Html.RadioButtonFor(model => model.MYAEnrollment2Year, "Recreation")Recreation</span>
+                            <span id="PartType04">
+                                @Html.RadioButtonFor(model => model.MYAEnrollment2Year, "Social Services Client")Social
+                                Services Client</span>*@
+
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldRICTechCenter">
+                        <br />
+                        @Html.Label("Are you a student at the Richmond Technical Center?")
+                        @Html.RadioButtonFor(model => model.RichmondTechnicalCenter, "YES")Yes
+                        @Html.RadioButtonFor(model => model.RichmondTechnicalCenter, "NO")No
+                    </div>
+                    <div id="FieldRICTechCenterExp">
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        @Html.Label(" If yes, what are you studying?")
+                        @Html.TextAreaFor(model => model.RichmondTechnicalCenterExplain, new { maxlength = 50, rows = 1, cols = 53 })
+                    </div>
+                    <div class="clear">
+                    </div>
+
+                    @*<div id="FieldHighSchGrad">
+                            <h4>
+                               <br />
+                               <span></span></h4>
+                        </div>*@
+
+
+                    @*<div id="FieldECPI">
+                            <br />
+                            @Html.Label("If you are a JUNIOR or SENIOR, are you applying for the ECPI Technology Series?")
+                            @Html.Label("Have you participated in any STEM / Robotics / Computer Science Programs?")
+                            @Html.RadioButtonFor(model => model.ECPISeries, "YES")Yes
+                            @Html.RadioButtonFor(model => model.ECPISeries, "NO")No
+                        </div>
+                        <div class="clear">
+                        </div>*@
+
+
+                    @*<div id="FieldBlueSky">
+                        @Html.Label("Have you participated in the Blue Sky Fund Program?")
+                        @Html.RadioButtonFor(model => model.BlueSky, "YES")Yes
+                        @Html.RadioButtonFor(model => model.BlueSky, "NO")No
+                        @Html.Label("Have you participated in any STEM / Robotics / Computer Science Programs?")*@
+
+
+                    @*<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            @Html.Label(" If yes, type the ones(s) you have participated in:")
+                            @Html.TextAreaFor(model => model.BlueSkyFundProgram, new { maxlength = 50, @rows = 1, @cols = 43 })
+                        </div>*@
+
+                </div>
+                <div id="HeaderPreviousKDInformation">
+                    <h3>
+                        PREVIOUS EXPERIENCE #1 <span style="font-style: italic; font-size: small">
+                            (include employment,
+                            community service, volunteer work, and MYA participation)
+                        </span>
+                    </h3>
+                    <br />
+                    <div id="FieldCompanyP">
+                        @Html.Label("Company:")
+                        @Html.TextBoxFor(model => model.PreviousCompanyA, new { maxlength = "100" })
+                    </div>
+                    <div id="FieldJobTitleP">
+                        &nbsp;
+                        @Html.Label("Job Title:")
+                        @Html.TextBoxFor(model => model.JobTitleA, new { maxlength = "50" })
+                    </div>
+                    <div id="FieldResponsibilitiesP">
+                        &nbsp;
+                        @Html.Label("Responsibilities:")
+                        @Html.TextAreaFor(model => model.ResponsibilitiesA, new { maxlength = "100", cols = 54, rows = 3 })
+                    </div>
+
+                    <div id="FieldLenEmploy">
+
+                        <div class="clear">
+                        </div>
+                        <br />
+                        &nbsp;
+                        @Html.Label("Length of Service:")
+                        &nbsp;
+                        <div id="FieldRBEmploy">
+                            <span id="EmpType01">
+                                @Html.RadioButtonFor(model => model.LengthOfServiceA, "Summer Only")Summer Only
+                            </span><span id="EmpType02">
+                                @Html.RadioButtonFor(model => model.LengthOfServiceA, "0 to 3 Mths")0 to 3 Mths
+                            </span>
+                            <span id="EmpType03">
+                                @Html.RadioButtonFor(model => model.LengthOfServiceA, "3 to 6 Mths")3 to 6 Mths
+                            </span>
+                            <span id="EmpType04">
+                                @Html.RadioButtonFor(model => model.LengthOfServiceA, "6 Mths to 1 year")6 Mths
+                                to 1 year
+                            </span> <span id="EmpType05">
+                                @Html.RadioButtonFor(model => model.LengthOfServiceA, "Over 1 year") Over 1 year
+                            </span>
+
+                            <br />
+
+                            <br />
+
+                        </div>
+
+                    </div>
+
+                    <div class="clear">
+                    </div>
+                </div>
+                <div id="HeaderOtherPrevEmp">
+                    <h3>
+                        PREVIOUS EXPERIENCE #2 <span style="font-style: italic; font-size: small">(include employment, community service, volunteer work, and MYA participation) </span>
+                    </h3>
+                    <div id="FieldCompanyO">
+                        @Html.Label("Company:")
+                        @Html.TextBoxFor(model => model.PreviousCompanyB, new { maxlength = "100" })
+                    </div>
+
+                    <div id="FieldJobTitleO">
+                        &nbsp;
+                        @Html.Label("Job Title:")
+                        @Html.TextBoxFor(model => model.JobTitleB, new { maxlength = "100" })
+                    </div>
+
+                    <div id="FieldResponsibilitiesO">
+                        &nbsp;
+                        @Html.Label("Responsibilities:")
+                        @Html.TextAreaFor(model => model.ResponsibilitiesB, new { maxlength = "100", cols = 54, rows = 3 })
+                    </div>
+                    <div id="FieldLenEmploy01">
+                        <div class="clear">
+                        </div>
+                        <br />
+                        &nbsp;
+                        @Html.Label("Length of Service:")
+                        &nbsp;
+                        <div id="FieldRBEmployO01">
+                            <span id="EmpTypeO01">@Html.RadioButtonFor(model => model.LengthOfServiceB, "Summer Only")Summer Only </span>
+                            <span id="EmpTypeO02">@Html.RadioButtonFor(model => model.LengthOfServiceB, "0 to 3 Mths")0 to 3 Mths</span>
+                            <span id="EmpTypeO03">@Html.RadioButtonFor(model => model.LengthOfServiceB, "3 to 6 Mths")3 to 6 Mths</span>
+                            <span id="EmpTypeO04">@Html.RadioButtonFor(model => model.LengthOfServiceB, "6 Mths to 1 year")6 Mths to 1 year</span>
+                            <span id="EmpTypeO05">@Html.RadioButtonFor(model => model.LengthOfServiceB, "Over 1 year")Over 1 year</span>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                @*<div id="HeaderTraining">
+                        <h3>Please indicate any training, certifications you have:</h3>
+                           <ul style="list-style-type: square;">
+                              <li>Automotive</li>
+                              <li>Graphics/CAD</li>
+                              <li>Keyboarding/Business</li>
+                              <li>Customer Service</li>
+                              <li>Food Services/Culinary Arts</li>
+                              <li>Healthcare</li>
+                              <li>Data Entry</li>
+                              <li>Technology</li>
+                              <li>Computer Programming</li>
+                              <li>MS Office <span style="font-size: x-small; font-style: italic">(Excel,Word,Powerpoint)</span></li>
+                              <li>Website Design</li>
+                              <li>Other</li>
+                           </ul>
+                        <div class="clear">
+                        </div>
+                        <div id="FieldTypeTraining">
+                            @Html.Label("Type the training, certifications you have received:")<br />
+                            @Html.TextAreaFor(model => model.TrainingChoices, new { maxlength = "100", cols = 60, rows = 3 })
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>*@
+                <div id="HeaderSchoolRelated">
+                    <h3>Please indicate any school/community related activities you’ve participated in,<br /> in the last 3 years:</h3>
+                    <ul style="list-style-type: square;">
+                        <li>Sports</li>
+                        <li>Band and Music</li>
+                        <li>Step Team</li>
+                        <li>ROTC</li>
+                        <li>Foreign Language Club</li>
+                        <li>Cheerleading</li>
+                        <li>Service Club <span style="font-size: x-small; font-style: italic">(i.e. SADD)</span></li>
+                        <li>Honors Club <span style="font-size: x-small; font-style: italic">(i.e. BETA, Key, National)</span></li>
+                        <li>Business Club <span style="font-size: x-small; font-style: italic">(i.e. DECA, FBLA)</span></li>
+                        <li>Other</li>
+                    </ul>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldTypeCommAct">
+                        @Html.Label("Type the school/community related activities you have participated in:")<br />
+                        @Html.TextAreaFor(model => model.CoomunityRelatedChoices, new { maxlength = "100", cols = 60, rows = 3 })
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                @*<div id="HeaderAreaOfInterest">
+                        <h3 style="text-align: center">
+                           <u><span style="color: red; font-weight: bolder; text-align: center;">ARTS Institute Program Applicants ONLY:</span></u></h3>
+                        <div id="SelectLife">
+                            <h3>Please select <span style="color: Red; font-weight: bolder">TWO</span> areas of interest you are applying to, ONE from each discipline</h3>
+                            <span><u><b>STEAM</b> discipline</u></span>
+                            <ul style="list-style-type: square;">
+                                <li>Dance Movement</li>
+                                <li>Visual Arts</li>
+                                <li>Vocal Music</li>
+                                <li>Film &nbsp;/ Screenwriting ( Video's for</li>
+                                <li>Commercials )</li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="FieldAreaInterestChoice">
+                            <span style="color:red">ARTS Institute Program Applicants only:</span> Selection (STEAM choice) :
+                            @Html.Label("")
+                            <select name="SummerWorkExpChoices" id="SummerWorkExpChoices">
+                                <option value=" ">&nbsp;</option>
+                                <option value="Dance Movement">Dance Movement</option>
+                                <option value="Film/Screenwriting(Video's for Commercials)">Film/Screenwriting (Video's for Commercials)</option>
+                                <option value="Visual Arts">Visual Arts</option>
+                                <option value="Vocal Music">Vocal Music</option>
+                            </select>
+                            <br />
+                            <br />
+                            @Html.ValidationMessageFor(model => model.SummerWorkExpChoices)
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="SelectLifeB">
+                            <span><u><b>STEM</b> discipline</u></span>
+                            <ul style="list-style-type: square;">
+                                <li>Food Chemistry</li>
+                                <li>Maker / Woodworking</li>
+                                <li>Textiles</li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="FieldAreaInterestChoiceB">
+                            <b><span style="color:red">ARTS Institute Program Applicants only:</span> Selection (STEM choice) :</b> &nbsp;
+                            @Html.Label("")
+                             @Html.TextAreaFor(model => model.LifeStageChoices, new {maxlength ="100", @cols = 60, @rows = 3})
+                            <select name="LifeStageChoices" id="LifeStageChoices">
+                                <option value=" ">&nbsp;</option>
+                                <option value="Food Chem.">Food Chemistry</option>
+                                <option value="Maker/Wood">Maker/Woodworking (Wood Science) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </option>
+                                <option value="Textiles">Textiles</option>
+                                </select>
+                            <br />
+                            @Html.ValidationMessageFor(model => model.LifeStageChoices)
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>*@
+
+                <div id="HeaderAreaOfInterest">
+                    <div>
+                        <h3 style="text-align: center">
+                            <u>
+                                <span style="color: red; font-weight: bolder; text-align: center;">
+                                    COUNSELORS IN TRAINING,COMMUNITY HEALTH WORKER AND VIRTUAL EARN &amp; LEARN APPLICANTS ONLY:
+                                </span>
+                            </u>
+                        </h3>
+                    </div>
+                    <div>
+                        <b>
+                            <i>
+                                @Html.Label("Will you be available to work 20 hours per week (9 AM -1 PM) ?")
+                            </i>
+                        </b>
+                        <br />
+                        <br />
+                        &nbsp;
+                        @Html.RadioButtonFor(model => model.CITchoices, "Yes")
+                        &nbsp; Yes
+                        <br />
+                        <br />
+                        &nbsp;
+                        @Html.RadioButtonFor(model => model.CITchoices, "No")
+                        &nbsp; No
+                        <br />
+                        <br />
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div>
+                        <b>
+                            <i>
+                                @Html.Label("Select your top three (3) areas of interest for career exploration:")
+                            </i>
+                        </b>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldAreaInterestChoice">
+                        &nbsp; &nbsp; #1. &nbsp;
+                        @Html.Label("")
+                        @*@Html.TextAreaFor(model => model.SummerWorkExpChoices, new {maxlength ="10", cols = 60, rows = 3})*@
+                        <select name="SummerWorkExpChoices" id="SummerWorkExpChoices">
+                            <option value=" ">&nbsp;</option>
+                            <option value="1Agr/NatRe"> Agriculture & Natural Resources                              </option>
+                            <option value="1Arc/Const"> Architecture & Construction                                  </option>
+                            <option value="1Art/AVT/C"> Arts, Audio/Video Technology & Communications                </option>
+                            <option value="1BusMgtAdm"> Business Management & Administration                         </option>
+                            <option value="1EduCouTrn"> Education, Counseling, and Training                          </option>
+                            <option value="1Entrepren"> Entrepreneurship                                             </option>
+                            <option value="1Finance  "> Finance                                                      </option>
+                            <option value="1GovPubAdm"> Government & Public Administration                           </option>
+                            <option value="1HealthSci"> Health Science                                               </option>
+                            <option value="1H/Tourism"> Hospitality & Tourism                                        </option>
+                            <option value="1Human/Ser"> Human Services                                               </option>
+                            <option value="1Info/Tech"> Information Technology                                       </option>
+                            <option value="1LawPubSaf"> Law, Public Safety, Corrections & Security                   </option>
+                            <option value="1Manufacur"> Manufacturing                                                </option>
+                            <option value="1Marketing"> Marketing                                                    </option>
+                            <option value="1SciTecEng"> Science, Technology, Engineering & Mathematics &nbsp; &nbsp; </option>
+                            <option value="1TranDistL"> Transportation, Distribution & Logistics                     </option>
+                        </select>
+                        <br />
+                        <br />
+                        @Html.ValidationMessageFor(model => model.SummerWorkExpChoices)
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="FieldAreaInterestChoiceB">
+                        <b>&nbsp; &nbsp; #2. &nbsp;&nbsp;</b>
+                        @Html.Label("")
+
+                        <select name="LifeStageChoices" id="LifeStageChoices">
+                            <option value=" ">&nbsp;</option>
+                            <option value="2Agr/NatRe"> Agriculture & Natural Resources                              </option>
+                            <option value="2Arc/Const"> Architecture & Construction                                  </option>
+                            <option value="2Art/AVT/C"> Arts, Audio/Video Technology & Communications                </option>
+                            <option value="2BusMgtAdm"> Business Management & Administration                         </option>
+                            <option value="2EduCouTrn"> Education, Counseling, and Training                          </option>
+                            <option value="2Entrepren"> Entrepreneurship                                             </option>
+                            <option value="2Finance  "> Finance                                                      </option>
+                            <option value="2GovPubAdm"> Government & Public Administration                           </option>
+                            <option value="2HealthSci"> Health Science                                               </option>
+                            <option value="2H/Tourism"> Hospitality & Tourism                                        </option>
+                            <option value="2HumanServ"> Human Services                                               </option>
+                            <option value="2InforTech"> Information Technology                                       </option>
+                            <option value="2LawPubSaf"> Law, Public Safety, Corrections & Security                   </option>
+                            <option value="2Manufacur"> Manufacturing                                                </option>
+                            <option value="2Marketing"> Marketing                                                    </option>
+                            <option value="2SciTecEng"> Science, Technology, Engineering & Mathematics &nbsp; &nbsp; </option>
+                            <option value="2TranDistL"> Transportation, Distribution & Logistics                     </option>
+                        </select>
+                        <br />
+                        @Html.ValidationMessageFor(model => model.LifeStageChoices)
+                        <br />
+                    </div>
+                    <div id="FieldBlueSky">
+                        &nbsp; &nbsp; #3. &nbsp;
+                        @Html.Label("")
+
+                        <select name="BlueSkyFundProgram" id="BlueSkyFundProgram">
+                            <option value=" ">&nbsp;</option>
+                            <option value="3Agr/NatRe"> Agriculture & Natural Resources                              </option>
+                            <option value="3Arc/Const"> Architecture & Construction                                  </option>
+                            <option value="3Art/AVT/C"> Arts, Audio/Video Technology & Communications                </option>
+                            <option value="3BusMgtAdm"> Business Management & Administration                         </option>
+                            <option value="3EduCouTrn"> Education, Counseling, and Training                          </option>
+                            <option value="3Entrepren"> Entrepreneurship                                             </option>
+                            <option value="3Finance  "> Finance                                                      </option>
+                            <option value="3GovPubAdm"> Government & Public Administration                           </option>
+                            <option value="3HealthSci"> Health Science                                               </option>
+                            <option value="3H/Tourism"> Hospitality & Tourism                                        </option>
+                            <option value="3HumanServ"> Human Services                                               </option>
+                            <option value="3InforTech"> Information Technology                                       </option>
+                            <option value="3LawPubSaf"> Law, Public Safety, Corrections & Security                   </option>
+                            <option value="3Manufacur"> Manufacturing                                                </option>
+                            <option value="3Marketing"> Marketing                                                    </option>
+                            <option value="3SciTecEng"> Science, Technology, Engineering & Mathematics &nbsp; &nbsp; </option>
+                            <option value="3TranDistL"> Transportation, Distribution & Logistics                     </option>
+                        </select>
+                        <br />
+                        @Html.ValidationMessageFor(model => model.BlueSkyFundProgram)
+                        <br />
+                    </div>
+                </div>
+                @*<div id="HeaderAreaOfInterest">
+                        <h3 style="text-align: center">
+                           <u><span style="color: red; font-weight: bolder; text-align: center;">Counselors in Training Program Applicants ONLY:</span></u></h3>
+                        <div>
+                            @Html.Label("Are you interested in water sports, biking, and comfortable in the outdoor environments?")
+                            @Html.RadioButtonFor(model => model.CITChoices, "JamesRiver")Yes
+                            @Html.RadioButtonFor(model => model.CITChoices, "NonOutdoor")No
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>*@
+
+
+                @*<div id="HeaderEmployerOfChoice">
+                        <h3 align="center">
+                            <span style="font-weight: bolder">
+                                <u>
+                                    ALL APPLICANTS:
+                                </u>
+                            </span>
+                            <br />
+                        </h3>
+                        <h3 style="font-style: italic;">
+                            <span>
+                                Please provide a brief response to the appropriate question below for your program choice.
+                                <br />
+                                &nbsp; &nbsp;
+                                Use
+                                <u>complete sentences</u>
+                                and
+                                <u>appropriate grammar</u>.
+                                <br />
+                                &nbsp; &nbsp;
+                                Your response will be used to evaluate your application.
+                            </span>
+                            <br />
+                            <br />
+                            <span style="color: Red">
+                                <small>
+                                    * Counselor In Training applicants
+                                </small>
+                            </span>
+                            <span>
+                                <small>
+                                    &nbsp;
+                                    (no more than <u>500 words</u>):
+                                </small>
+                            </span>
+                            <br />
+                            <span style="color: Blue">
+                                <small>
+                                    &nbsp; &nbsp;
+                                    Why do you want to participate in the MYA Counselor in Training program ?
+                                </small>
+                            </span>
+                            <br />
+                            <br />
+                            <span style="color: Red">
+                                <small>
+                                    * Summer Work Experience applicants
+                                </small>
+                            </span>
+                            <span>
+                                <small>
+                                    &nbsp;
+                                    (no more than <u>250 words</u>):
+                                </small>
+                            </span>
+                            <br />
+                            <span style="color: Blue">
+                                <small>
+                                    &nbsp; &nbsp;
+                                    Why do you want to participate in the MYA Summer Work Experience program ?
+                                </small>
+                            </span>
+                            <br />
+                            <br />
+                            <span style="color: Red">
+                                <small>
+                                    * Kings Dominion applicants
+                                </small>
+                            </span>
+                            <span>
+                                <small>
+                                    &nbsp;
+                                    (no more than <u>250 words</u>):
+                                </small>
+                            </span>
+                            <br />
+                            <span style="color: Blue">
+                                <small>
+                                    &nbsp; &nbsp;
+                                    What do you hope to gain by participating in the MYA Pre-Employment Trainings and
+                                    <br />
+                                    &nbsp; &nbsp;
+                                    your Kings Dominion Summer Employment ?
+                                </small>
+                            </span>
+
+                           <span>
+                              Why do you want to participate in the MYA program?
+                             <br />
+                              &nbsp;
+                              Please describe what you hope to gain from your experience in MYA?
+                        </span>
+
+                        </h3>
+                        <div>
+                            @Html.TextAreaFor(model => model.AboutMYAExperience, new
+                                {
+                                    id = "limitedtextarea",
+                                    cols = 96,
+                                    rows = 18,
+                                    onKeyUp = "limitText()"
+                                })
+                            <br />
+                            <font size="1">
+                                ( Maximum characters: 1,000 )
+                                <br />
+                                You have
+                                <input readonly type="text" name="countdown" id="countdown" size="3" value="1000" style="background-color:#CCCCCC">
+                                characters left.
+                            </font>
+                            @Html.ValidationMessageFor(model => model.AboutMYAExperience)
+                        </div>
+                    </div>*@
+                <div id="HeaderEmployerOfChoice">
+                    <h3 align="center">
+                        <span style="font-weight: bolder">
+                            <u>
+                                ALL APPLICANTS:
+                            </u>
+                        </span>
+                        <br />
+                    </h3>
+                    <h3 style="font-style:normal;">
+                        <span>
+                            Please provide a brief response to the appropriate question below .
+                            <br />
+
+                            Use
+                            <u>complete sentences</u>
+                            and
+                            <u>appropriate grammar</u>.
+
+
+                            Your response will be used to evaluate your application.(no more than <u>1000 characters</u>)
+                        </span>
+                        <br />
+                        <br />
+
+                        <br />
+                        <span style="color: blue;font-size:23px;font-style:italic">
+
+
+                            Briefly describe your career goals and how participating in the Mayor’s Youth Academy’s Summer Work Experience program will help you meet these goals.
+
+                        </span>
+                        <br />
+                        <br />
+
+
+                        <span style="text-align:left ; font-size: medium; font-weight: bold; color: Red">
+                            Please include the Richmond Public School/School email address
+                            <br />
+
+                        </span>
+
+                    </h3>
+                    <div>
+                        @Html.TextAreaFor(model => model.AboutMyaexperience, new
+                            {
+                                id = "limitedtextarea",
+                                cols = 96,
+                                rows = 18,
+                                onKeyUp = "limitText()"
+                            })
+                        <br />
+                        <font size="1">
+                            ( Maximum characters: 1000 )
+                            <br />
+                            You have
+                            <input readonly type="text" name="countdown" id="countdown" size="3" value="1000" style="background-color:#CCCCCC">
+                            characters left.
+                        </font>
+                        @Html.ValidationMessageFor(model => model.AboutMyaexperience)
+                    </div>
+                </div>
+                <div id="HeaderDisclaimer">
+                    <div style="text-align:left ; font-size: medium; font-weight: bold; color: Red">
+
+                        TECHNOLOGY DISCLAIMER: WILL NEED ACCESS TO RELIABLE INTERNET AND COMPUTER
+
+                    </div>
+                </div>
+
+                @*<div id="HeaderDisclaimer">
+                        <div>
+                            <h3>
+                                Acknowledgement of Application Process, Disclaimer, and Parental Consent
+                            </h3>
+                        </div>
+                        <div>
+                            <p>
+                                <span style="font-size: 13px; font-weight: normal;">
+                                    I certify that my answers are true and complete to the best of my knowledge.
+                                </span>
+                            </p>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                The completion and submission of this application for the
+                                <span style="font-size: 14px; font-weight: bold;">
+                                    @System.Configuration.ConfigurationManager.AppSettings["MYAYearOfEnrollment"]
+                                </span>
+                                MYA - Summer Work Experience Program:
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Does not guarantee employment with MYA;
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Does not guarantee acceptance into other MYA Summer programs;
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                MYA Applicants that are successfully hired by Kings Dominion will be eligible to receive round trip transportation
+                                <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                from Richmond to Kings Dominion for Summer Employment in accordance with Kings Dominion’s terms of
+                                <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                employment;
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Transportation will be provided in partnership with GRTC. Shuttle routes and times will be determined by GRTC
+                                <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                and MYA will issue bus passes to participants granting them access to the shuttle service.
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Eligibility for employment transportation requires successful completion of mandatory training sessions;
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Proof of Richmond residency is required for all participants in the Mayor's Youth Academy;
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                If accepted into any of the MYA Summer programs, parental consent will be required for participants
+                                <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                under age 18;
+
+                            </span>
+                        </div>
+                        <div>
+                            <span style="font-size: 13px; font-weight: normal;">
+                                <br />
+                                &#8226;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                Failure to complete this application in its entirety, including electronic signatures acknowledging this statement,
+                                <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                will automatically render an application incomplete and ineligible.
+                            </span>
+                        </div>
+                        <div id="FieldSignature">
+                            <br />
+                            <br />
+                            <span class="FieldRequired">&#42;</span>
+                            @Html.Label("Applicant Signature")
+                            &nbsp;
+                            @Html.TextBoxFor(model => model.ApplicantSignature, new { maxlength = "50" })
+                            <br />
+                        </div>
+                        <div id="FieldSignature">
+                            <span class="FieldRequired">&#42;</span>
+                            @Html.Label("Parent Signature")
+                            &nbsp; &nbsp; &nbsp;
+                            @Html.TextBoxFor(model => model.ApplicantSignature, new { maxlength = "50" })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.ApplicantSignature)
+                            <br />
+                        </div>
+                        <div id="FieldDate">
+                            <span class="FieldRequired"></span>
+                            @Html.Label("Date")
+                            @Html.TextBox("ApplicantSignatureDate", @TempData["applicantSignatureDate"], new { disabled = "true" })
+
+                            <br />
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>*@
+            </div>
+            <!-- this is used to make it difficult for bots-->
+            <div id="HeaderBot">
+                <label for="Internal Use Only">
+                    Internal Use Only
+                </label>
+                <input type="text" name="FullName" value="1CityOurCity1" class="HideMe" />
+                <input type="text" name="BusinessName" value="" class="HideMe" />
+            </div>
+            <div>
+                <span>
+                    &nbsp; &nbsp;
+                    <i>
+                        <b>
+                            Note:
+                        </b>
+                        After
+                        <b>
+                            [Submit Application]
+                        </b>
+                        button is pressed, confirmation receipt emails will be sent to both applicant and parent,
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        if these are not received, then your application may not process correctly, please reapply or contact the MYA office.
+                    </i>
+                </span>
+                <br />
+                <br />
+            </div>
+            <div>
+                @Html.ValidationSummary()
+                <center>
+                    <input id="startProcess" type="submit" value="Submit Application" class="buttonStyle" />
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="reset" value="Reset" class="buttonStyle" />
+                    <br />
+                    <br />
+                    <br />
+                    @*onclick="disDelay(this)"*@
+                </center>
+            </div>
+
+            @*<div>
+                    <a href="#" id="startProcess">Start Long Running Process</a>
+                </div>*@
+
+            <br />
+            <div id="statusBorder">
+                <div id="statusFill">
+                </div>
+            </div>
+            <div id="dialog-submit" title="Log In" class="displayNone">
+                <p>
+                    <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
+                    </span>
+                    Submitting...one moment please
+                </p>
+            </div>
+            <div id="bottomDiv">
+                <div id="bottomLeft">
+                </div>
+                <div id="bottomCenter">
+                    <center>
+                        <span style="font-weight: bold; font-size: x-small; color: #2a466d;">
+                            Mayor's Youth Academy - EDC Building
+                            <br />
+                            701 N. 25th Street
+                            <br />
+                            Richmond VA 23223
+                            <br />
+                            804.646.7480
+                        </span>
+                    </center>
+                </div>
+                <div id="bottomRight">
+                </div>
+            </div>
+        }
+    }
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script type="text/javascript">
+
+        function disableButtons() {
+            var form = $(this);
+            var btns = $("input:submit", form);
+
+            if (!form.valid()) {
+                // allow user to correct validation errors and re-submit
+                btns.removeAttr("disabled");
+            } else {
+                btns.attr("disabled", "disabled");
+            }
+        }
+        function disDelay(obj) {
+            var form = $('form0');
+            if (!form.valid()) {
+
+                obj.setAttribute('disabled', 'disabled');
+                setTimeout(function () { obj.removeAttribute('disabled') }, 3000)
+            }
+        }
+        var uniqueId = '@Guid.NewGuid().ToString()';
+        $(document).ready(function (event) {
+            $('#startProcess').click(function () {
+                var refreshButton = this;
+                var url = "/applications/MYASummerEnrollmentApplication/Home/StartLongRunningProcess";
+                $.post(url, { id: uniqueId }, function () {
+                    //disDelay(this);
+                    $('#statusBorder').show();
+                    refreshButton.disabled = 'disabled';
+                    getStatus();
+                    setTimeout(function () { refreshButton.disabled = false; }, 4000);
+                });
+                event.preventDefault;
+            });
+        });
+
+        function getStatus() {
+            var url = '/applications/MYASummerEnrollmentApplication/Home/GetCurrentProgress/' + uniqueId;
+            $.get(url, function (data) {
+                if (data != "100") {
+                    $('#status').html(data);
+                    $('#statusFill').width(data);
+                    //               $('#statusFill').css({ 'width': data.toString() + "px" });
+                    window.setTimeout("getStatus()", 100);
+
+                }
+                else {
+                    $('#status').html("Done");
+                    $('#statusBorder').hide();
+
+                };
+            });
+        }
+
+        // code below: Work Order 120086 (added by evansbe 02/24/2015 reference: Telugunti, B.) //
+        function limitText() {
+            limitField = $('#limitedtextarea');
+            limitCount = $('#countdown');
+            limitNum = 1000; // Use the Max limit of the control
+
+            // Trim extra characters once remaining limit reaches 0
+            if (limitCount.val() == 0) { limitField.val(limitField.val().substring(0, limitNum)); }
+
+            limitCount.val(limitNum - limitField.val().length);
+        }
+
+        //        function limitText(field, field2, maxlimit) {
+        //            var countfield = document.getElementById(field2);
+        //            if (field.value.length > maxlimit) {
+        //                field.value = field.value.substring(0, maxlimit);
+        //                return false;
+        //            } else {
+        //                countfield.value = maxlimit - field.value.length;
+        //            }
+        //        }
+
+        //        function limitText(limitField, limitCount, limitNum) {
+        //            limitField = $('#limitedtextarea');
+        //            //alert(limitField.val());
+        //            limitCount = $('#countdown');
+        //            //alert(limitCount.val());
+        //            //alert(limitNum);
+        //            if (limitField.value.length > limitNum) {
+        //                limitField.value = limitField.value.substring(0, limitNum);
+        //            } else {
+        //                limitCount.value = limitNum - limitField.value.length;
+        //            }
+        //        }
+        // code above: Work Order 120086 (added by evansbe 02/24/2015) //
+
+    //Datepicker
+   
+</script>
